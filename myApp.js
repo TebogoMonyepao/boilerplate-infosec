@@ -1,7 +1,11 @@
 const express = require('express');
 const app = express();
 
+//Import helmet
+const helmet = require('helmet');
 
+//Hide the X-Powered-By header 
+app.use(helmet.hidePoweredBy());
 
 
 
