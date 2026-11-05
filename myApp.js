@@ -8,8 +8,14 @@ const helmet = require('helmet');
 app.use(helmet.hidePoweredBy());
 
 
+//Preventing clickjacking by denying iframe inclusion
+app.use(helmet.frameguard({action: 'DENY' }));
 
+//Preventing cross-site scripting using xssFilter
+app.use(helmet.xssFilter());
 
+//Preventing MIME sniffing 
+app.use(helmet.noSniff());
 
 
 
